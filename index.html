@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,7 +121,7 @@
             font-size: 18px;
             line-height: 1.6;
             margin-bottom: 24px;
-            color: var(--text-secondary);
+            color: var (--text-secondary);
             font-weight: 300;
         }
 
@@ -135,7 +134,7 @@
 
         /* Alternating sections with distinct visual identity */
         .section:nth-child(even) {
-            background: linear-gradient(135deg, var(--bg-light), var(--bg-accent));
+            background: linear-gradient(135deg, var (--bg-light), var(--bg-accent));
         }
 
         .container {
@@ -180,15 +179,17 @@
             position: relative;
             overflow: hidden;
             border-radius: 8px;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(78, 205, 196, 0.2);
             background-color: var(--white);
             aspect-ratio: 16/9; /* Fixed aspect ratio */
             transform: perspective(1000px) rotateY(-5deg);
             transition: all 0.5s ease;
+            border: 2px solid rgba(78, 205, 196, 0.3);
         }
         
         .video-container:hover {
-            transform: perspective(1000px) rotateY(0);
+            transform: perspective(1000px) rotateY(0) scale(1.03);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2), 0 0 0 2px var(--accent);
         }
 
         .video-container.feature-video {
@@ -197,7 +198,7 @@
         }
         
         .video-container.feature-video:hover {
-            transform: perspective(1000px) rotateY(0);
+            transform: perspective(1000px) rotateY(0) scale(1.03);
         }
 
         video {
@@ -838,9 +839,6 @@
             
             <div style="max-width: 800px; margin: 60px auto;">
                 <p style="font-size: 24px; text-align: center; color: var(--text-primary); font-weight: 300;">Who has tried making a data report... and ended up with <span class="highlight-2">'final_FINAL_LAST_VERSION_4_REAL_THIS_TIME_PLEASE_GOD.xlsx'</span>?</p>
-                <p style="text-align: center; color: var(--text-primary); font-size: 20px; font-weight: 500; margin-top: 20px;">Exactly.</p>
-                <p style="text-align: center; font-size: 20px;">Data analysis today is like trying to find a specific jellybean in a swimming pool full of jellybeans.</p>
-                <p style="text-align: center; font-size: 20px;">Either you need a PhD in SQL, or you spend 17 hours googling 'How to make a pie chart without crying'.</p>
                 <p style="text-align: center; font-size: 20px; color: var(--accent); font-weight: 500;">Business Intelligence tools promised us 'easy insights' — and then gave us 500-page manuals instead.</p>
             </div>
         </div>
@@ -948,32 +946,44 @@
     <section class="section fade-in" id="market">
         <div class="container">
             <h2 class="text-center">The <span class="accent">Market</span></h2>
-            <p style="text-align: center; font-size: 24px; color: var(--text-primary); font-weight: 300; margin-top: 20px;">And here's the kicker — the pool we're swimming in is huge.</p>
+            <p style="text-align: center; font-size: 24px; color: var(--text-primary); font-weight: 300; margin-bottom: 40px;">Every company drowns in data. They ALL need faster, simpler insights.</p>
             
-            <div class="grid grid-2">
-                <div>
-                    <p style="font-size: 20px;">Every company drowns in data. Big ones, small ones, that one coffee shop that tracks your croissant purchases — they ALL need faster, simpler insights.</p>
+            <div class="grid grid-2" style="align-items: center; gap: 30px;">
+                <!-- Graph on the left -->
+                <div style="text-align: center;">
+                    <img src="static/market.png" alt="Market Overview" style="width: 100%; height: auto; border-radius: 8px; box-shadow: var(--shadow-lg); transition: all 0.5s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                     
-                    <div class="stat-grid">
-                        <div class="stat-item float">
-                            <div class="stat-number">$30B+</div>
-                            <div class="stat-label">Business Intelligence Market</div>
-                        </div>
-                        <div class="stat-item float" style="animation-delay: 0.5s">
-                            <div class="stat-number">74%</div>
-                            <div class="stat-label">Companies Struggle with Data Analysis</div>
-                        </div>
-                        <div class="stat-item float" style="animation-delay: 1s">
-                            <div class="stat-number">15x</div>
-                            <div class="stat-label">Faster Insights with AI</div>
-                        </div>
+                    <!-- MAV Analysis below graph -->
+                    <div style="margin-top: 20px; text-align: left; padding: 20px; background: rgba(78, 205, 196, 0.1); border-radius: 8px; border-left: 4px solid var(--accent);">
+                        <p style="font-size: 16px; font-weight: 500; margin-bottom: 8px; color: var(--accent);">MAV PLATFORM ANALYSIS:</p>
+                        <p style="font-size: 15px; font-style: italic;">Trend shows upward growth across all categories, reaching 30.65 billion USD (Europe) and 97.5 billion USD (US) by 2032.</p>
+                    </div>
+                </div>
+                
+                <!-- Stats on the right side (smaller) -->
+                <div style="padding-left: 20px;">
+                    <div class="stat-item" style="text-align: left; margin-bottom: 30px;">
+                        <div class="stat-number" style="font-size: 42px;">$30B+</div>
+                        <div class="stat-label" style="font-size: 14px;">Business Intelligence Market</div>
                     </div>
                     
-                    <p style="color: var(--accent); font-size: 24px; font-style: italic; text-align: center; margin-top: 30px; font-weight: 500;">Translation: If data is the new oil, we're handing out oil rigs.</p>
+                    <div class="stat-item" style="text-align: left; margin-bottom: 30px;">
+                        <div class="stat-number" style="font-size: 42px;">74%</div>
+                        <div class="stat-label" style="font-size: 14px;">Companies Struggle with Data Analysis</div>
+                    </div>
+                    
+                    <div class="stat-item" style="text-align: left; margin-bottom: 30px;">
+                        <div class="stat-number" style="font-size: 42px;">8.9%</div>
+                        <div class="stat-label" style="font-size: 14px;">CAGR (Compound Annual Growth Rate)</div>
+                    </div>
+                    
+                    <p style="color: var(--accent); font-size: 20px; font-style: italic; font-weight: 500; margin-top: 20px;">If data is the new oil, we're handing out oil rigs.</p>
                 </div>
-                <div style="display: flex; justify-content: center; align-items: center;">
-                    <img src="static/market.png" alt="Market Overview" style="width: 120%; max-width: 550px; height: auto; border-radius: 8px; box-shadow: var(--shadow-lg); transform: perspective(1000px) rotateY(5deg); transition: all 0.5s ease;" onmouseover="this.style.transform='perspective(1000px) rotateY(0) scale(1.05)'" onmouseout="this.style.transform='perspective(1000px) rotateY(5deg)'">
-                </div>
+            </div>
+            
+            <!-- Sources Section -->
+            <div style="margin-top: 20px; text-align: right; padding-right: 10px;">
+                <p style="font-size: 12px; color: var(--mid-gray); margin: 0;">Sources: Fortune Business Insights, Inkwood Research Europe, GlobeNewswire</p>
             </div>
         </div>
     </section>
@@ -996,7 +1006,6 @@
                         <li><span style="color: var(--text-primary); font-weight: 600; font-size: 18px;">No explaining to Karen from Sales why her bar chart looks like a Picasso painting.</span></li>
                     </ul>
                     
-                    <p style="text-align: left; font-size: 18px;">Just ask. Get insights. Move on. Like business intelligence... without the midlife crisis.</p>
                     <p style="text-align: left; color: var(--accent); font-weight: 500; font-size: 22px; margin-top: 20px;">We're turning business intelligence from an 'Oh no' into an 'Oh hell yes.'</p>
                 </div>
                 <div class="video-container feature-video">
@@ -1138,7 +1147,7 @@
                 <p style="color: var(--accent); font-size: 24px; font-weight: 500; margin: 20px 0;">Then let's talk.</p>
                 <p style="font-size: 20px; margin-top: 30px;">Help us change the future of data analysis... and finally retire that Excel file named <span class="highlight-2">final_version_final_2_FINALFORREAL.xlsx</span>.</p>
                 
-                <a href="#" class="btn" style="margin-top: 50px; font-size: 18px; padding: 18px 40px;">Join the Revolution</a>
+                <a href="https://forms.gle/8qCpxFE99oGoZyha8" class="btn" style="margin-top: 50px; font-size: 18px; padding: 18px 40px;" target="_blank">Join the Revolution</a>
                 
                 <p style="margin-top: 30px; font-style: italic; color: var(--accent);">Thank you!</p>
             </div>
